@@ -98,7 +98,7 @@ app.use('/api/citas_klean_vet', citasKleanVetRoutes); // Prefijo: /api/citas_kle
 // ------------------------------------------------
 // 3. FRONTEND ESTATICO
 // ------------------------------------------------
-const frontendDir = path.join(__dirname, '..');
+const frontendDir = path.resolve(process.cwd());
 app.use(express.static(frontendDir));
 
 const frontendEntry = process.env.FRONTEND_ENTRY || 'inicio_sesion.html';
