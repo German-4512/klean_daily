@@ -11,7 +11,7 @@ const { supabaseAdmin } = require('./config/supabase'); // Importamos el cliente
 
 // Inicialización de la aplicación Express
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // ------------------------------------------------
 // 1. MIDDLEWARES GLOBALES
@@ -158,7 +158,7 @@ app.get('/api', (req, res) => {
 // ------------------------------------------------
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor Express escuchando en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en puerto ${PORT}`);
     // Usamos console.log() para verificar si la URL se cargó correctamente desde el .env
     console.log(`Base de datos URL cargada: ${process.env.SUPABASE_URL ? 'OK' : 'FALTA LA URL'}`);
 });
