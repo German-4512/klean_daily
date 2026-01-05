@@ -162,3 +162,11 @@ app.listen(PORT, () => {
     // Usamos console.log() para verificar si la URL se cargó correctamente desde el .env
     console.log(`Base de datos URL cargada: ${process.env.SUPABASE_URL ? 'OK' : 'FALTA LA URL'}`);
 });
+
+try {
+    app.listen(PORT, () => {
+        console.log(`🚀 Servidor listo en puerto ${PORT}`);
+    });
+} catch (err) {
+    console.error("Error crítico al iniciar:", err);
+}
