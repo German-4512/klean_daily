@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendimiento Asesor CallCenter - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="rendimiento_asesor_kv.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="brand">
+            <span class="brand-black">KLEAN VET</span>
+            <span class="brand-accent">DAILY</span>
+        </div>
+        <a href="#" id="logout-btn" class="logout-link">
+            <span class="logout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3.33 0-8 1.67-8 5v1h16v-1c0-3.33-4.67-5-8-5z" fill="currentColor"></path>
+                </svg>
+            </span>
+            Cerrar Sesion
+        </a>
+    </header>
+
+    <main class="page">
+        <div class="page-card">
+            <div class="page-head">
+                <button type="button" class="btn-back" id="btn-back">ATRAS</button>
+                <div>
+                    <h1 class="page-title">RENDIMIENTO <span class="title-accent">ASESOR CALLCENTER</span></h1>
+                    <p class="page-subtitle" id="period-subtitle">Resumen del mes actual</p>
+                </div>
+            </div>
+
+            <section class="filters">
+                <div class="filter-group">
+                    <label for="filter-advisor">Filtrar por asesor</label>
+                    <select id="filter-advisor">
+                        <option value="">Todos los asesores</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-month">Filtrar por mes</label>
+                    <input type="month" id="filter-month">
+                </div>
+                <div class="filter-actions">
+                    <button type="button" class="btn-filter" data-preset="yesterday">Ayer</button>
+                    <button type="button" class="btn-filter" data-preset="today">Hoy</button>
+                    <button type="button" class="btn-filter" data-preset="last7">Ultimos 7 dias</button>
+                    <button type="button" class="btn-filter btn-primary" id="btn-apply-month">Aplicar</button>
+                    <button type="button" class="btn-filter btn-ghost" id="btn-clear">Limpiar</button>
+                </div>
+            </section>
+
+            <section class="metrics-grid">
+                <article class="metric-card">
+                    <p class="metric-label">Preventas (mes)</p>
+                    <h2 class="metric-value" id="metric-preventas">0</h2>
+                    <p class="metric-note">Registros del periodo seleccionado</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Clientes unicos</p>
+                    <h2 class="metric-value" id="metric-clientes">0</h2>
+                    <p class="metric-note">Documentos sin repetir</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Comisiones netas</p>
+                    <h2 class="metric-value" id="metric-comisiones">$0</h2>
+                    <p class="metric-note">Comisiones generales</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Comisiones retenidas por credito</p>
+                    <h2 class="metric-value" id="metric-retenidas">$0</h2>
+                    <p class="metric-note">Creditos sin paz y salvo</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Unidades totales</p>
+                    <h2 class="metric-value" id="metric-unidades">0</h2>
+                    <p class="metric-note">Confirmadas del periodo</p>
+                </article>
+            </section>
+
+            <section class="charts-grid">
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Preventas por dia</h3>
+                        <span class="chart-tag" id="chart-month-label"></span>
+                    </div>
+                    <div class="chart-scroll">
+                        <div class="bar-chart" id="chart-by-day"></div>
+                    </div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Unidades Preventas por Mes (ano actual)</h3>
+                        <span class="chart-tag" id="chart-year-label"></span>
+                    </div>
+                    <div class="bar-chart" id="chart-by-month"></div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Clientes unicos por mes (ano actual)</h3>
+                        <span class="chart-tag" id="chart-clients-year-label"></span>
+                    </div>
+                    <div class="bar-chart" id="chart-clients-by-month"></div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Unidades por producto</h3>
+                        <span class="chart-tag">Confirmadas</span>
+                    </div>
+                    <div class="empty-state" id="chart-products">
+                        Sin datos de productos todavia.
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <script src="rendimiento_asesor_kv.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

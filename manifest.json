@@ -1,0 +1,16 @@
+{
+  "name": "Klean Vet Daily",
+  "short_name": "Klean Daily",
+  "start_url": "./inicio_sesion.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fdff",
+  "theme_color": "#00cbd1",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

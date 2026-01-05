@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-ink: #111111;
+    --color-muted: #6b7280;
+    --color-accent: #00cbd1;
+    --color-accent-dark: #049da3;
+    --color-surface: #ffffff;
+    --color-line: #e6eef0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(900px circle at 15% 15%, #e7fbfd 0%, transparent 60%),
+                radial-gradient(900px circle at 85% 5%, #ffe9df 0%, transparent 55%),
+                linear-gradient(180deg, #f8fdff 0%, #f4f6fb 100%);
+    color: var(--color-ink);
+    display: flex;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('Fondo_login.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.login-container {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 24px 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card {
+    width: min(480px, 94vw);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 24px;
+    padding: 36px 36px 40px;
+    box-shadow: 0 20px 60px rgba(17, 24, 39, 0.12);
+    text-align: center;
+    backdrop-filter: blur(4px);
+}
+
+.brand-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.brand-black {
+    color: var(--color-ink);
+}
+
+.brand-accent {
+    color: var(--color-accent);
+}
+
+.brand-subtitle {
+    color: var(--color-muted);
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+.login-form {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--color-line);
+    background: #f8fcfd;
+    font-size: 1rem;
+    color: var(--color-ink);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(0, 203, 209, 0.18);
+}
+
+.btn-primary {
+    margin-top: 6px;
+    background: linear-gradient(120deg, #00cbd1, #16b8be);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.btn-primary:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.forgot-password {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: var(--color-accent-dark);
+}
+
+@media (max-width: 600px) {
+    .login-card {
+        padding: 28px 24px 30px;
+    }
+
+    body::before {
+        background-position: center;
+        opacity: 0.18;
+    }
+}

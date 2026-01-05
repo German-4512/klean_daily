@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Pre Venta - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="form_call.css">
+</head>
+<body>
+
+    <header class="header-container">
+        <div class="header-title"><h1>KLEAN VET - DAILY</h1></div>
+        <div class="header-logout"><a href="#" id="logout-btn" class="logout-link">Cerrar Sesión</a></div>
+    </header>
+
+    <main class="form-container">
+        <div class="form-card">
+            <div class="form-head">
+                <button type="button" class="btn-back" id="btn-back-page">ATRAS</button>
+                <div class="title-stack">
+                    <h2 class="form-title">AÑADIR PRE <span class="highlight">VENTA</span></h2>
+                    <p class="form-subtitle">Completa los datos paso a paso</p>
+                </div>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="step-dots">
+                    <span class="step-dot active" data-step="1">1</span>
+                    <span class="step-dot" data-step="2">2</span>
+                    <span class="step-dot" data-step="3">3</span>
+                    <span class="step-dot" data-step="4">4</span>
+                </div>
+            </div>
+
+            <form id="pre-venta-form">
+                <div class="form-step active" id="step-1">
+                    <select id="tipo_doc" required>
+                        <option value="" disabled selected>Tipo de Documento</option>
+                        <option value="Cc">Cc</option>
+                        <option value="TI">TI</option>
+                        <option value="PPT">PPT</option>
+                        <option value="NIT-RUT">NIT - RUT</option>
+                    </select>
+                    <input type="text" id="num_doc" placeholder="Ingresar Numero de Cedula" required>
+                    <div class="form-actions">
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-2">
+                    <input type="text" id="nombre_paciente" placeholder="Nombre Paciente" required>
+                    <input type="text" id="nombre_tutor" placeholder="Nombre Tutor" required>
+                    <input type="tel" id="tel_contacto" placeholder="Tel. Contacto" required>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Volver</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-3">
+                    <div class="product-group">
+                        <div class="product-row">
+                            <select id="produc_1">
+                                <option value="" selected>Producto 1</option>
+                                <option value="1% 15 Ml">1% 15 Ml</option>
+                                <option value="2% 15 Ml">2% 15 Ml</option>
+                                <option value="2% 30 Ml">2% 30 Ml</option>
+                                <option value="3% 100 Ml">3% 100 Ml</option>
+                                <option value="Gastro Plus">Gastro Plus</option>
+                                <option value="Derma Plus">Derma Plus</option>
+                                <option value="Adulto Plus">Adulto Plus</option>
+                            </select>
+                            <input type="number" id="cant_1" placeholder="Cantidad 1" min="0" step="1" inputmode="numeric">
+                        </div>
+                        <div class="product-row">
+                            <select id="produc_2">
+                                <option value="" selected>Producto 2</option>
+                                <option value="1% 15 Ml">1% 15 Ml</option>
+                                <option value="2% 15 Ml">2% 15 Ml</option>
+                                <option value="2% 30 Ml">2% 30 Ml</option>
+                                <option value="3% 100 Ml">3% 100 Ml</option>
+                                <option value="Gastro Plus">Gastro Plus</option>
+                                <option value="Derma Plus">Derma Plus</option>
+                                <option value="Adulto Plus">Adulto Plus</option>
+                            </select>
+                            <input type="number" id="cant_2" placeholder="Cantidad 2" min="0" step="1" inputmode="numeric">
+                        </div>
+                        <div class="product-row">
+                            <select id="produc_3">
+                                <option value="" selected>Producto 3</option>
+                                <option value="1% 15 Ml">1% 15 Ml</option>
+                                <option value="2% 15 Ml">2% 15 Ml</option>
+                                <option value="2% 30 Ml">2% 30 Ml</option>
+                                <option value="3% 100 Ml">3% 100 Ml</option>
+                                <option value="Gastro Plus">Gastro Plus</option>
+                                <option value="Derma Plus">Derma Plus</option>
+                                <option value="Adulto Plus">Adulto Plus</option>
+                            </select>
+                            <input type="number" id="cant_3" placeholder="Cantidad 3" min="0" step="1" inputmode="numeric">
+                        </div>
+                        <div class="product-row">
+                            <select id="produc_4">
+                                <option value="" selected>Producto 4</option>
+                                <option value="1% 15 Ml">1% 15 Ml</option>
+                                <option value="2% 15 Ml">2% 15 Ml</option>
+                                <option value="2% 30 Ml">2% 30 Ml</option>
+                                <option value="3% 100 Ml">3% 100 Ml</option>
+                                <option value="Gastro Plus">Gastro Plus</option>
+                                <option value="Derma Plus">Derma Plus</option>
+                                <option value="Adulto Plus">Adulto Plus</option>
+                            </select>
+                            <input type="number" id="cant_4" placeholder="Cantidad 4" min="0" step="1" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Volver</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-4">
+                    <input type="text" id="id_ads" placeholder="Id Ads (Opcional)">
+                    <input type="text" id="origen_leads" placeholder="Origen Leads (Opcional)">
+                    <label for="fecha_atencion">Fecha y Hora de Atencion</label>
+                    <input type="datetime-local" id="fecha_atencion" required>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Volver</button>
+                        <button type="submit" class="btn-finalize">Finalizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="form_call.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

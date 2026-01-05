@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar o Agendar Cliente - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="registrar_agendar_call.css">
+</head>
+<body>
+
+    <header class="header-container">
+        <div class="header-title"><h1>KLEAN VET - DAILY</h1></div>
+        <div class="header-logout"><a href="#" id="logout-btn" class="logout-link">Cerrar Sesión</a></div>
+    </header>
+
+    <main class="form-container">
+        <div class="form-card">
+            <div class="form-head">
+                <button type="button" class="btn-back" id="btn-back-page">ATRAS</button>
+                <div class="title-stack">
+                    <h2 class="form-title">REGISTRAR O AGENDAR <span class="highlight">CLIENTE</span></h2>
+                    <p class="form-subtitle">Busca por numero de documento y registra si no existe</p>
+                </div>
+            </div>
+
+            <section class="search-card">
+                <h3 class="section-title">Buscador de cliente</h3>
+                <p class="section-subtitle">Ingresa el numero de documento para validar registro</p>
+                <div class="search-row">
+                    <input type="text" id="search-num-doc" placeholder="Numero Documento" inputmode="numeric" autocomplete="off">
+                    <button type="button" class="btn-continue" id="btn-search">Buscar</button>
+                    <button type="button" class="btn-secondary" id="btn-view-profile" disabled>Ver perfil</button>
+                </div>
+                <div id="search-result" class="search-result" role="status" aria-live="polite"></div>
+            </section>
+
+            <form id="registro-form" class="registro-form" hidden>
+                <div class="section-head">
+                    <h3 class="section-title">Datos del solicitante</h3>
+                    <p class="section-subtitle">Campos obligatorios marcados</p>
+                </div>
+                <div class="form-grid">
+                    <select id="tipo_documento" required>
+                        <option value="" disabled selected>Tipo de Documento</option>
+                        <option value="CC">CC</option>
+                        <option value="TI">TI</option>
+                        <option value="PPT">PPT</option>
+                        <option value="NIT-RUT">NIT - RUT</option>
+                    </select>
+                    <input type="text" id="numero_documento" placeholder="Numero Documento" required inputmode="numeric">
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="text" id="apellido" placeholder="Apellido" required>
+                    <input type="tel" id="telefono_celular" placeholder="Telefono Celular" required>
+                    <input type="email" id="correo_electronico" placeholder="Correo Electronico" required>
+                    <input type="text" id="departamento" placeholder="Departamento" list="departamento-list" autocomplete="off">
+                    <datalist id="departamento-list"></datalist>
+                    <input type="text" id="municipio" placeholder="Municipio" list="municipio-list" autocomplete="off" disabled>
+                    <datalist id="municipio-list"></datalist>
+                    <input type="text" id="direccion" placeholder="Direccion">
+                    <input type="text" id="apartamento" placeholder="Apartamento">
+                    <input type="text" id="torre" placeholder="Torre">
+                    <input type="text" id="barrio" placeholder="Barrio">
+                </div>
+
+                <div class="section-head">
+                    <h3 class="section-title">Datos de la mascota</h3>
+                    <p class="section-subtitle">Opcional para completar el registro</p>
+                </div>
+                <div class="form-grid">
+                    <input type="text" id="nombre_mascota" placeholder="Nombre Mascota">
+                    <input type="text" id="raza" placeholder="Raza">
+                    <input type="number" id="edad" placeholder="Edad" min="0" step="1" inputmode="numeric">
+                    <select id="unidad_edad">
+                        <option value="" selected>Unidad de Edad</option>
+                        <option value="Meses">Meses</option>
+                        <option value="Anos">Anos</option>
+                    </select>
+                    <input type="number" id="peso" placeholder="Peso" min="0" step="0.01" inputmode="decimal">
+                    <select id="especie">
+                        <option value="" selected>Especie</option>
+                        <option value="Canino">Canino</option>
+                        <option value="Feluno">Feluno</option>
+                        <option value="Equino">Equino</option>
+                    </select>
+                    <select id="estado_reproductivo">
+                        <option value="" selected>Estado Reproductivo</option>
+                        <option value="Esterilizado">Esterilizado</option>
+                        <option value="No Esterilizado">No Esterilizado</option>
+                        <option value="No Sabe">No Sabe</option>
+                    </select>
+                    <select id="sexo">
+                        <option value="" selected>Sexo</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                    <div class="field-stack">
+                        <label for="fecha_nacimiento">Fecha de nacimiento mascota</label>
+                        <input type="date" id="fecha_nacimiento">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-finalize">Guardar Cliente</button>
+                    <button type="button" class="btn-secondary" id="btn-clear-form">Limpiar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="registrar_agendar_call.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento 30 Dias - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="form_seguimiento_vets.css">
+</head>
+<body data-seguimiento="Seg 30 Dias">
+
+    <header class="header-container">
+        <div class="header-title"><h1>KLEAN VET - DAILY</h1></div>
+        <div class="header-logout"><a href="#" id="logout-btn" class="logout-link">Cerrar Sesion</a></div>
+    </header>
+
+    <main class="form-container">
+        <div class="form-card">
+            <div class="form-head">
+                <button type="button" class="btn-back" id="btn-back-page">ATRAS</button>
+                <div class="title-stack">
+                    <h2 class="form-title">SEGUIMIENTO <span class="highlight">30 DIAS</span></h2>
+                    <p class="form-subtitle">Completa el seguimiento paso a paso</p>
+                </div>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="step-dots">
+                    <span class="step-dot active" data-step="1">1</span>
+                    <span class="step-dot" data-step="2">2</span>
+                    <span class="step-dot" data-step="3">3</span>
+                    <span class="step-dot" data-step="4">4</span>
+                </div>
+            </div>
+
+            <form id="seguimiento-form">
+                <input type="hidden" id="venta_confirmada_id">
+
+                <div class="form-step active" id="step-1">
+                    <select id="contactar_cliente" required>
+                        <option value="" disabled selected>Contactar Cliente</option>
+                        <option value="No contesta">No contesta</option>
+                        <option value="Ocupado">Ocupado</option>
+                        <option value="Pendiente de Respuesta">Pendiente de Respuesta</option>
+                        <option value="Ha contestado">Ha contestado</option>
+                        <option value="Fallecido">Fallecido</option>
+                        <option value="Tratamiento Suspendido">Tratamiento Suspendido</option>
+                        <option value="Tratamiento en Pausa">Tratamiento en Pausa</option>
+                    </select>
+                    <div class="form-actions">
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-finalize" data-finalize disabled>Finalizar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-2">
+                    <select id="satisfaccion_cliente" required>
+                        <option value="" disabled selected>Satisfaccion Cliente</option>
+                        <option value="Posible Testimonio">Posible Testimonio</option>
+                        <option value="Mascota ha presentado buenos resultados">Mascota ha presentado buenos resultados</option>
+                        <option value="Mascota no le ha gustado producto">Mascota no le ha gustado producto</option>
+                        <option value="Se le ha suspendido el tratamiento">Se le ha suspendido el tratamiento</option>
+                        <option value="Requiere ajuste el tratamiento">Requiere ajuste el tratamiento</option>
+                        <option value="Requiere nueva consulta">Requiere nueva consulta</option>
+                        <option value="Cambio de Producto">Cambio de Producto</option>
+                        <option value="No le funciono el medicamento">No le funciono el medicamento</option>
+                        <option value="Cliente Recompra Frecuente">Cliente Recompra Frecuente</option>
+                    </select>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-3">
+                    <textarea id="efectos_secundarios" class="textarea-input" placeholder="Efectos Secundarios" required></textarea>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-4">
+                    <textarea id="resultados_observaciones" class="textarea-input" placeholder="Resultados u Observaciones" required></textarea>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="submit" class="btn-finalize">Finalizar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="form_seguimiento_vets.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

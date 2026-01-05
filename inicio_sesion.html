@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLEAN DAILY - Iniciar Sesión</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="inicio_sesion.css">
+</head>
+<body>
+
+    <main class="login-container">
+        <div class="login-card">
+            <div class="brand-title">
+                <span class="brand-black">KLEAN VET</span>
+                <span class="brand-accent">DAILY</span>
+            </div>
+
+            <p class="brand-subtitle">Acceso exclusivo para el equipo</p>
+
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    Iniciar sesión
+                </button>
+
+                <a href="#" class="forgot-password">Olvidar contraseña</a>
+            </form>
+        </div>
+    </main>
+
+    <script src="inicio_sesion.js"></script> 
+    <script src="sw-register.js"></script>
+
+</body>
+</html>

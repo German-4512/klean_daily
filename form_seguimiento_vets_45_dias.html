@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento 45 Dias - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="form_seguimiento_vets.css">
+</head>
+<body>
+
+    <header class="header-container">
+        <div class="header-title"><h1>KLEAN VET - DAILY</h1></div>
+        <div class="header-logout"><a href="#" id="logout-btn" class="logout-link">Cerrar Sesion</a></div>
+    </header>
+
+    <main class="form-container">
+        <div class="form-card">
+            <div class="form-head">
+                <button type="button" class="btn-back" id="btn-back-page">ATRAS</button>
+                <div class="title-stack">
+                    <h2 class="form-title">SEGUIMIENTO <span class="highlight">45 DIAS</span></h2>
+                    <p class="form-subtitle">Completa el seguimiento paso a paso</p>
+                </div>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="step-dots">
+                    <span class="step-dot active" data-step="1">1</span>
+                    <span class="step-dot" data-step="2">2</span>
+                    <span class="step-dot" data-step="3">3</span>
+                    <span class="step-dot" data-step="4">4</span>
+                    <span class="step-dot" data-step="5">5</span>
+                </div>
+            </div>
+
+            <form id="seguimiento-form">
+                <input type="hidden" id="venta_confirmada_id">
+
+                <div class="form-step active" id="step-1">
+                    <select id="contacto_estado" required>
+                        <option value="" disabled selected>Estado de la Gestion</option>
+                        <option value="Contacto Exitoso">Contacto Exitoso</option>
+                        <option value="Contacto Fallido">Contacto Fallido</option>
+                        <option value="Baja de Seguimiento">Baja de Seguimiento</option>
+                    </select>
+                    <select id="contacto_detalle" required>
+                        <option value="" disabled selected>Detalle de Contactabilidad</option>
+                        <option value="Conversacion Efectiva">Conversacion Efectiva</option>
+                        <option value="No contesta / Buzon de voz">No contesta / Buzon de voz</option>
+                        <option value="Ocupado / Solicita rellamada">Ocupado / Solicita rellamada</option>
+                        <option value="Tratamiento Suspendido">Tratamiento Suspendido</option>
+                        <option value="Tratamiento en Pausa">Tratamiento en Pausa</option>
+                        <option value="Datos Erroneos / Numero equivocado">Datos Erroneos / Numero equivocado</option>
+                        <option value="Fallecido">Fallecido</option>
+                    </select>
+                    <div class="form-actions">
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-2">
+                    <select id="csat_puntaje" required>
+                        <option value="" disabled selected>Escala de Satisfaccion</option>
+                        <option value="5 - Excelente (Promotor)">5 - Excelente</option>
+                        <option value="4 - Satisfecho">4 - Satisfecho</option>
+                        <option value="3 - Neutral">3 - Neutral</option>
+                        <option value="2 - Insatisfecho">2 - Insatisfecho</option>
+                        <option value="1 - Muy Insatisfecho">1 - Muy Insatisfecho</option>
+                    </select>
+                    <textarea id="csat_justificacion" class="textarea-input" placeholder="Detalle el motivo principal de la calificacion del cliente" required></textarea>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-3">
+                    <select id="engagement" required>
+                        <option value="" disabled selected>Engagement</option>
+                        <option value="Proactivo">Proactivo</option>
+                        <option value="Receptivo">Receptivo</option>
+                        <option value="Pasivo">Pasivo</option>
+                        <option value="Hostil">Hostil</option>
+                    </select>
+                    <select id="uso_producto" required>
+                        <option value="" disabled selected>Uso del Producto/Servicio</option>
+                        <option value="Uso correcto y constante">Uso correcto y constante</option>
+                        <option value="Uso intermitente">Uso intermitente</option>
+                        <option value="No lo esta usando">No lo esta usando</option>
+                    </select>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-4">
+                    <select id="probabilidad_recompra" required>
+                        <option value="" disabled selected>Probabilidad de Recompra</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Media</option>
+                        <option value="Baja">Baja</option>
+                    </select>
+                    <select id="valor_agregado" required>
+                        <option value="" disabled selected>Valor Agregado</option>
+                        <option value="Candidato para Testimonio/Caso de Exito">Candidato para Testimonio/Caso de Exito</option>
+                        <option value="Candidato para Testimonio">Candidato para Testimonio</option>
+                        <option value="Requiere Intervencion Tecnica/Especialista">Requiere Intervencion Tecnica/Especialista</option>
+                    </select>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="button" class="btn-continue" data-next>Continuar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-5">
+                    <textarea id="observaciones" class="textarea-input" placeholder="Notas adicionales" required></textarea>
+                    <label for="proximo_contacto">Fecha de proximo contacto</label>
+                    <input type="date" id="proximo_contacto" required>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" data-prev>Atras</button>
+                        <button type="submit" class="btn-finalize">Finalizar</button>
+                        <button type="button" class="btn-reminder" data-reminder>Dejar Hasta Aqui</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="form_seguimiento_vets_45_dias.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

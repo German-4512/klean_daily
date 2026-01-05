@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Ventas - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="cargar_ventas_kv.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="brand">
+            <span class="brand-black">KLEAN VET</span>
+            <span class="brand-accent">DAILY</span>
+        </div>
+        <a href="#" id="logout-btn" class="logout-link">
+            <span class="logout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3.33 0-8 1.67-8 5v1h16v-1c0-3.33-4.67-5-8-5z" fill="currentColor"></path>
+                </svg>
+            </span>
+            Cerrar Sesion
+        </a>
+    </header>
+
+    <main class="page">
+        <div class="page-card">
+            <div class="page-head">
+                <button type="button" class="btn-back" id="btn-back">ATRAS</button>
+                <div>
+                    <h1 class="page-title">CARGAR <span class="title-accent">VENTAS</span></h1>
+                    <p class="page-subtitle">Importa el archivo Excel con las ventas del dia</p>
+                </div>
+            </div>
+
+            <section class="upload-card">
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="excel-file" accept=".xlsx,.xls" hidden>
+                    <div class="upload-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" role="img" focusable="false">
+                            <path d="M12 2a7 7 0 0 1 7 7v6a3 3 0 0 1-3 3h-1v2h-2v-2h-2v2H9v-2H8a3 3 0 0 1-3-3V9a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V9a5 5 0 0 0-5-5zm-1 4h2v4h3l-4 4-4-4h3V8z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="upload-title">Arrastra el Excel o haz clic para seleccionar</p>
+                        <p class="upload-hint">Formatos soportados: .xlsx, .xls (max 10 MB)</p>
+                    </div>
+                    <button type="button" class="btn-secondary" id="btn-pick">Seleccionar archivo</button>
+                </div>
+                <div class="upload-info">
+                    <p class="upload-file" id="file-name">Ningun archivo seleccionado</p>
+                    <button type="button" class="btn-primary" id="btn-upload">Cargar ventas</button>
+                </div>
+                <div class="upload-result" id="upload-result" hidden></div>
+            </section>
+
+            <section class="table-card">
+                <div class="table-head">
+                    <div>
+                        <h3>Columnas requeridas en el Excel</h3>
+                        <p class="table-subtitle">Respeta estos nombres o equivalentes</p>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Contacto</th>
+                                <th>Venta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>cedula_cliente, nombre_cliente</td>
+                                <td>telefono, direccion, ciudad, departamento, correo_electronico</td>
+                                <td>veterinario, concentracion, fecha_prescripcion, mascota, tipo_de_venta</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="cargar_ventas_kv.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

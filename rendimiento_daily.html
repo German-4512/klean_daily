@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Rendimiento Dia - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="rendimiento_daily.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="brand">
+            <span class="brand-black">KLEAN VET</span>
+            <span class="brand-accent">DAILY</span>
+        </div>
+        <a href="#" id="logout-btn" class="logout-link">
+            <span class="logout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3.33 0-8 1.67-8 5v1h16v-1c0-3.33-4.67-5-8-5z" fill="currentColor"></path>
+                </svg>
+            </span>
+            Cerrar Sesion
+        </a>
+    </header>
+
+    <main class="page">
+        <div class="page-card">
+            <div class="page-head">
+                <button type="button" class="btn-back" id="btn-back">ATRAS</button>
+                <div class="page-head-content">
+                    <h1 class="page-title">MI RENDIMIENTO <span class="title-accent">DIA</span></h1>
+                    <p class="page-subtitle">Resumen diario</p>
+                </div>
+            </div>
+
+            <section class="summary">
+                <div class="summary-card">
+                    <p class="summary-title">Tienda Virtual</p>
+                    <div class="counter-row counter-a" data-counter data-persona="Tienda Virtual" data-veterinario="Tienda Virtual" data-tipo-venta="primera_vez">
+                        <div class="counter-buttons">
+                            <button type="button" class="counter-btn" data-action="dec">-</button>
+                            <button type="button" class="counter-btn" data-action="inc">+</button>
+                        </div>
+                        <input class="counter-value" type="text" value="0" readonly>
+                    </div>
+                </div>
+                <div class="summary-metrics">
+                    <article class="summary-metric metric-card vets">
+                        <p>Total V. Primera Vez</p>
+                        <h3 id="metric-primera-vez">0</h3>
+                    </article>
+                    <article class="summary-metric metric-card vets">
+                        <p>Total V. Seguimiento</p>
+                        <h3 id="metric-seguimiento">0</h3>
+                    </article>
+                    <article class="summary-metric metric-card vets">
+                        <p>Total Ventas Hoy</p>
+                        <h3 id="metric-ventas-hoy">0</h3>
+                    </article>
+                    <article class="summary-metric metric-card preventas">
+                        <p>Total Preventa</p>
+                        <h3 id="metric-preventas">0</h3>
+                    </article>
+                </div>
+                <div class="summary-legend">
+                    <span class="legend-item legend-first">Ventas de Primera Vez</span>
+                    <span class="legend-item legend-follow">Ventas Seguimiento</span>
+                    <span class="legend-item legend-preventa">Pre Venta</span>
+                </div>
+            </section>
+
+            <section class="advisor-grid">
+                <article class="advisor-card">
+                    <div class="advisor-meta">
+                        <div class="advisor-avatar">DM</div>
+                        <div class="advisor-name">DIANA MARMOLEJO</div>
+                    </div>
+                    <div class="counter-stack">
+                        <div class="counter-row counter-a" data-counter data-persona="Diana Marmolejo" data-veterinario="Call Center" data-tipo-venta="primera_vez">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-b" data-counter data-persona="Diana Marmolejo" data-veterinario="Call Center" data-tipo-venta="seguimiento">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-c" data-counter data-persona="Diana Marmolejo" data-veterinario="Call Center" data-tipo-venta="preventa">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                    <div class="advisor-total advisor-total-side">
+                        <span class="advisor-total-label">Total Hoy</span>
+                        <span class="advisor-total-value" id="metric-persona-diana">0</span>
+                    </div>
+                </article>
+                <article class="advisor-card">
+                    <div class="advisor-meta">
+                        <div class="advisor-avatar">LD</div>
+                        <div class="advisor-name">LAURA DUARTE</div>
+                    </div>
+                    <div class="counter-stack">
+                        <div class="counter-row counter-a" data-counter data-persona="Laura Duarte" data-veterinario="Call Center" data-tipo-venta="primera_vez">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-b" data-counter data-persona="Laura Duarte" data-veterinario="Call Center" data-tipo-venta="seguimiento">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-c" data-counter data-persona="Laura Duarte" data-veterinario="Call Center" data-tipo-venta="preventa">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                    <div class="advisor-total advisor-total-side">
+                        <span class="advisor-total-label">Total Hoy</span>
+                        <span class="advisor-total-value" id="metric-persona-laura">0</span>
+                    </div>
+                </article>
+                <article class="advisor-card">
+                    <div class="advisor-meta">
+                        <div class="advisor-avatar">LS</div>
+                        <div class="advisor-name">LYDA SALCEDO</div>
+                    </div>
+                    <div class="counter-stack">
+                        <div class="counter-row counter-a" data-counter data-persona="Lyda Salcedo" data-veterinario="Call Center" data-tipo-venta="primera_vez">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-b" data-counter data-persona="Lyda Salcedo" data-veterinario="Call Center" data-tipo-venta="seguimiento">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-c" data-counter data-persona="Lyda Salcedo" data-veterinario="Call Center" data-tipo-venta="preventa">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                    <div class="advisor-total advisor-total-side">
+                        <span class="advisor-total-label">Total Hoy</span>
+                        <span class="advisor-total-value" id="metric-persona-lyda">0</span>
+                    </div>
+                </article>
+                <article class="advisor-card">
+                    <div class="advisor-meta">
+                        <div class="advisor-avatar">MM</div>
+                        <div class="advisor-name">MATEO MORENO</div>
+                    </div>
+                    <div class="counter-stack">
+                        <div class="counter-row counter-a" data-counter data-persona="Mateo Moreno" data-veterinario="Call Center" data-tipo-venta="primera_vez">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-b" data-counter data-persona="Mateo Moreno" data-veterinario="Call Center" data-tipo-venta="seguimiento">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                        <div class="counter-row counter-c" data-counter data-persona="Mateo Moreno" data-veterinario="Call Center" data-tipo-venta="preventa">
+                            <div class="counter-buttons">
+                                <button type="button" class="counter-btn" data-action="dec">-</button>
+                                <button type="button" class="counter-btn" data-action="inc">+</button>
+                            </div>
+                            <input class="counter-value" type="text" value="0" readonly>
+                        </div>
+                    </div>
+                    <div class="advisor-total advisor-total-side">
+                        <span class="advisor-total-label">Total Hoy</span>
+                        <span class="advisor-total-value" id="metric-persona-mateo">0</span>
+                    </div>
+                </article>
+            </section>
+
+            <section class="chart-card">
+                <div class="chart-head">
+                    <h3>Total Unidades pre venta</h3>
+                    <span class="chart-tag">Registradas por asesor</span>
+                </div>
+                <div class="chart-scroll">
+                    <div class="bar-chart" id="advisor-chart"></div>
+                </div>
+                <div class="empty-state chart-empty" id="advisor-chart-empty">Sin datos para mostrar.</div>
+            </section>
+        </div>
+    </main>
+
+    <script src="rendimiento_daily.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

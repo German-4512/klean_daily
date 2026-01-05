@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Citas - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="asistente_citas_call.css">
+</head>
+<body>
+
+    <header class="header-container">
+        <div class="header-title"><h1>KLEAN VET - DAILY</h1></div>
+        <div class="header-logout"><a href="#" id="logout-btn" class="logout-link">Cerrar Sesion</a></div>
+    </header>
+
+    <main class="assistant-container">
+        <div class="assistant-grid">
+            <section class="card">
+                <div class="card-head">
+                    <button type="button" class="btn-back" id="btn-back-page">ATRAS</button>
+                    <div class="title-stack">
+                        <h2 class="card-title">ASISTENTE DE <span class="highlight">CITAS</span></h2>
+                        <p class="card-subtitle">Agenda clientes con vista de calendario</p>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h3 class="section-title">Buscar cliente</h3>
+                    <p class="section-subtitle">Ingresa el numero de documento</p>
+                    <div class="search-row">
+                        <input type="text" id="search-num-doc" placeholder="Numero Documento" inputmode="numeric" autocomplete="off">
+                        <button type="button" class="btn-primary" id="btn-search">Buscar</button>
+                    </div>
+                    <div id="search-result" class="status-message" role="status" aria-live="polite"></div>
+                    <div id="client-summary" class="client-summary" hidden>
+                        <div class="summary-title">Cliente seleccionado</div>
+                        <div class="summary-line" id="summary-name">-</div>
+                        <div class="summary-line" id="summary-pet">-</div>
+                    </div>
+                </div>
+
+                <form id="cita-form">
+                    <div class="section-block">
+                        <h3 class="section-title">Datos de la cita</h3>
+                        <p class="section-subtitle">Completa la informacion del agendamiento</p>
+                        <div class="form-grid">
+                            <select id="medico_veterinario" required disabled>
+                                <option value="" disabled selected>Medico Veterinario</option>
+                            </select>
+                            <select id="tipo_atencion" required disabled>
+                                <option value="" disabled selected>Tipo de Atencion</option>
+                                <option value="Primera Vez Mascotas">Primera Vez Mascotas</option>
+                                <option value="Seguimiento Mascotas">Seguimiento Mascotas</option>
+                            </select>
+                            <div class="field-stack">
+                                <label for="fecha_inicio">Fecha y hora inicio</label>
+                                <input type="datetime-local" id="fecha_inicio" required disabled>
+                            </div>
+                            <div class="field-stack">
+                                <label for="fecha_fin">Fecha y hora fin</label>
+                                <input type="datetime-local" id="fecha_fin" required disabled>
+                            </div>
+                            <select id="estado_atencion" required disabled>
+                                <option value="" disabled>Estado de atencion</option>
+                                <option value="Sin atender" selected>Sin atender</option>
+                                <option value="Atendiendo">Atendiendo</option>
+                                <option value="No asiste">No asiste</option>
+                                <option value="Atendido">Atendido</option>
+                                <option value="No Apto">No Apto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="btn-save" disabled>Guardar Cita</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card calendar-card">
+                <div class="calendar-top">
+                    <div class="title-stack">
+                        <h2 class="card-title">Calendario</h2>
+                        <p class="card-subtitle">Hoy, manana, semana o mes</p>
+                    </div>
+                    <div class="calendar-controls">
+                        <div class="view-tabs">
+                            <button type="button" class="tab-btn" data-view="day">Hoy</button>
+                            <button type="button" class="tab-btn" data-view="tomorrow">Manana</button>
+                            <button type="button" class="tab-btn active" data-view="week">Semana</button>
+                            <button type="button" class="tab-btn" data-view="week-vet">Semana Vet</button>
+                            <button type="button" class="tab-btn" data-view="month">Mes</button>
+                        </div>
+                        <div class="nav-controls">
+                            <button type="button" class="btn-secondary" id="btn-prev">&#60;</button>
+                            <div class="nav-label" id="calendar-label">-</div>
+                            <button type="button" class="btn-secondary" id="btn-next">&#62;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <div class="field-stack">
+                        <label for="filter-vet">Medico Veterinario</label>
+                        <select id="filter-vet">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="field-stack">
+                        <label for="filter-status">Estado</label>
+                        <select id="filter-status">
+                            <option value="">Todos</option>
+                            <option value="Sin atender">Sin atender</option>
+                            <option value="Atendiendo">Atendiendo</option>
+                            <option value="No asiste">No asiste</option>
+                            <option value="Atendido">Atendido</option>
+                            <option value="No Apto">No Apto</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary" id="btn-refresh">Actualizar</button>
+                </div>
+
+                <div id="calendar-grid" class="calendar-grid"></div>
+                <div id="calendar-empty" class="empty-state" hidden>No hay citas para este rango.</div>
+            </section>
+        </div>
+    </main>
+
+    <div id="edit-modal" class="modal" hidden>
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal-head">
+                <h3 id="modal-title">Editar cita</h3>
+                <button type="button" class="btn-secondary" data-close-modal>Cerrar</button>
+            </div>
+            <form id="edit-form">
+                <div class="form-grid">
+                    <select id="edit-medico" required>
+                        <option value="" disabled selected>Medico Veterinario</option>
+                    </select>
+                    <select id="edit-tipo" required>
+                        <option value="" disabled selected>Tipo de Atencion</option>
+                        <option value="Primera Vez Mascotas">Primera Vez Mascotas</option>
+                        <option value="Seguimiento Mascotas">Seguimiento Mascotas</option>
+                    </select>
+                    <div class="field-stack">
+                        <label for="edit-inicio">Fecha y hora inicio</label>
+                        <input type="datetime-local" id="edit-inicio" required>
+                    </div>
+                    <div class="field-stack">
+                        <label for="edit-fin">Fecha y hora fin</label>
+                        <input type="datetime-local" id="edit-fin" required>
+                    </div>
+                    <select id="edit-estado" required>
+                        <option value="" disabled>Estado de atencion</option>
+                        <option value="Sin atender">Sin atender</option>
+                        <option value="Atendiendo">Atendiendo</option>
+                        <option value="No asiste">No asiste</option>
+                        <option value="Atendido">Atendido</option>
+                        <option value="No Apto">No Apto</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="btn-save-edit">Guardar cambios</button>
+                    <button type="button" class="btn-danger" id="btn-delete-cita">Quitar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="asistente_citas_call.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

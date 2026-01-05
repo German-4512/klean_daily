@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLEAN DAILY - Panel de Administración</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <span class="brand-black">KLEAN VET</span>
+            <span class="brand-accent">DAILY</span>
+        </div>
+        <a href="#" id="logout-btn" class="logout-link">
+            <span class="logout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3.33 0-8 1.67-8 5v1h16v-1c0-3.33-4.67-5-8-5z" fill="currentColor"></path>
+                </svg>
+            </span>
+            Cerrar Sesión
+        </a>
+    </header>
+
+    <main class="admin-container">
+        
+        <section class="user-management-panel">
+            <h2 class="section-title">Usuario</h2>
+            
+            <form id="user-form" class="user-form">
+                
+                <input type="text" id="nombre-apellido" name="nombre_apellido" placeholder="Nombre y Apellido" required>
+                
+                <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+                
+                <select id="rol" name="rol">
+                    <option value="" disabled selected>Rol</option>
+                    <option value="admin">Administrador</option>
+                    <option value="Asesor Comercial CallCenter">Asesor Comercial CallCenter</option>
+                    <option value="Asesor Comercial Promotor">Asesor Comercial Promotor</option>
+                    <option value="Datos y Ventas Klean Vet">Datos y Ventas Klean Vet</option>
+                    <option value="Veterinario">Veterinario</option>
+                    <option value="Agente Mayor">Agente Mayor</option>
+                    <option value="Invitado">Invitado</option>
+                </select>
+
+                <select id="medico-veterinario" name="medico_veterinario" class="is-hidden" disabled>
+                    <option value="" disabled selected>Medico Veterinario</option>
+                </select>
+
+                <select id="estado" name="estado">
+                    <option value="" disabled selected>Activo / No Activo</option>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">No Activo</option>
+                </select>
+                
+                <div class="action-buttons">
+                    <button type="submit" id="btn-create" class="btn btn-create">CREAR</button>
+                    <button type="button" id="btn-modify" class="btn btn-modify">MODIFICAR</button>
+                    <button type="button" id="btn-delete" class="btn btn-delete">ELIMINAR</button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="user-list-panel">
+            <h2 class="section-title">Lista Usuarios</h2>
+            
+            <div id="user-table-container" class="data-container">
+                </div>
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+    <script src="sw-register.js"></script>
+
+</body>
+</html>

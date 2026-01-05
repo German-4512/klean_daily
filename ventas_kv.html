@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="ventas_kv.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="brand">
+            <span class="brand-black">KLEAN VET</span>
+            <span class="brand-accent">DAILY</span>
+        </div>
+        <a href="#" id="logout-btn" class="logout-link">
+            <span class="logout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3.33 0-8 1.67-8 5v1h16v-1c0-3.33-4.67-5-8-5z" fill="currentColor"></path>
+                </svg>
+            </span>
+            Cerrar Sesion
+        </a>
+    </header>
+
+    <main class="page">
+        <div class="page-card">
+            <div class="page-head">
+                <button type="button" class="btn-back" id="btn-back">ATRAS</button>
+                <div>
+                    <h1 class="page-title">REGISTRO <span class="title-accent">VENTAS</span></h1>
+                    <p class="page-subtitle">Ventas cargadas para confirmar</p>
+                </div>
+            </div>
+
+            <div class="filters">
+                <div class="filters-left">
+                    <div class="filter-group">
+                        <label for="filter-date">Filtrar por fecha</label>
+                        <input type="date" id="filter-date" class="filter-input">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-prescripcion">Filtrar por prescripcion</label>
+                        <input type="text" id="filter-prescripcion" class="filter-input" placeholder="Ej: ABC-123">
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button type="button" class="btn-filter" data-preset="yesterday">Ayer</button>
+                    <button type="button" class="btn-filter" data-preset="today">Hoy</button>
+                    <button type="button" class="btn-filter" id="btn-filter-saved">Confirmado</button>
+                    <button type="button" class="btn-filter" id="btn-filter-pending">No Confirmado</button>
+                    <button type="button" class="btn-filter btn-primary" id="btn-filter-date">Aplicar</button>
+                    <button type="button" class="btn-filter btn-ghost" id="btn-clear">Limpiar</button>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Prescripcion</th>
+                            <th>Num Documento</th>
+                            <th>Tel Contacto</th>
+                            <th>Nombre Paciente</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Monto Venta</th>
+                            <th>Monto Pagado</th>
+                            <th>Metodo Pago</th>
+                            <th>Estado Venta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ventas-body">
+                        <tr>
+                            <td colspan="10" class="table-empty">Cargando ventas...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="ventas_kv.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

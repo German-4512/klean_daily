@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Rendimiento - Klean Vet</title>
+    <meta name="theme-color" content="#00cbd1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="mi_rendimiento_call.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="brand">
+            <span class="brand-black">KLEAN VET</span>
+            <span class="brand-accent">DAILY</span>
+        </div>
+        <a href="#" id="logout-btn" class="logout-link">
+            <span class="logout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" role="img" focusable="false">
+                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3.33 0-8 1.67-8 5v1h16v-1c0-3.33-4.67-5-8-5z" fill="currentColor"></path>
+                </svg>
+            </span>
+            Cerrar Sesión
+        </a>
+    </header>
+
+    <main class="page">
+        <div class="page-card">
+            <div class="page-head">
+                <button type="button" class="btn-back" id="btn-back">ATRAS</button>
+                <div>
+                    <h1 class="page-title">MI <span class="title-accent">RENDIMIENTO</span></h1>
+                    <p class="page-subtitle">Resumen del mes actual y evolución anual</p>
+                </div>
+            </div>
+
+            <section class="metrics-grid">
+                <article class="metric-card">
+                    <p class="metric-label">Total Unidades (Mes Actual)</p>
+                    <h2 class="metric-value" id="metric-preventas">0</h2>
+                    <p class="metric-note">Unidades confirmadas del mes</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Comisiones Mes Actual</p>
+                    <h2 class="metric-value" id="metric-comisiones">$0</h2>
+                    <p class="metric-note">Comisiones generales</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Comisiones retenidas por credito</p>
+                    <h2 class="metric-value" id="metric-retenidas">$0</h2>
+                    <p class="metric-note">Sin paz y salvo</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Unidades totales (General)</p>
+                    <h2 class="metric-value" id="metric-unidades">0</h2>
+                    <p class="metric-note">Unidades confirmadas acumuladas</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Comisiones generales</p>
+                    <h2 class="metric-value" id="metric-comisiones-general">$0</h2>
+                    <p class="metric-note">Historico completo</p>
+                </article>
+                <article class="metric-card">
+                    <p class="metric-label">Clientes únicos</p>
+                    <h2 class="metric-value" id="metric-clientes">0</h2>
+                    <p class="metric-note">Clientes con documento único</p>
+                </article>
+            </section>
+
+            <section class="charts-grid">
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Unidades preventas por día (mes actual)</h3>
+                        <span class="chart-tag" id="chart-month-label"></span>
+                    </div>
+                    <div class="chart-scroll">
+                        <div class="bar-chart" id="chart-by-day"></div>
+                    </div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Unidades Preventas por mes (año actual)</h3>
+                        <span class="chart-tag" id="chart-year-label"></span>
+                    </div>
+                    <div class="bar-chart" id="chart-by-month"></div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Retenciones por mes (año actual)</h3>
+                        <span class="chart-tag" id="chart-retenidas-year-label"></span>
+                    </div>
+                    <div class="bar-chart" id="chart-retenidas-by-month"></div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Comisiones por mes (año actual)</h3>
+                        <span class="chart-tag" id="chart-comisiones-year-label"></span>
+                    </div>
+                    <div class="bar-chart" id="chart-comisiones-by-month"></div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Clientes únicos preventa por mes (año actual)</h3>
+                        <span class="chart-tag" id="chart-clients-year-label"></span>
+                    </div>
+                    <div class="bar-chart" id="chart-clients-by-month"></div>
+                </article>
+                <article class="chart-card">
+                    <div class="chart-head">
+                        <h3>Unidades por producto</h3>
+                        <span class="chart-tag"></span>
+                    </div>
+                    <div class="empty-state" id="chart-products">
+                        Sin datos de productos todavía.
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <script src="mi_rendimiento_call.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>
