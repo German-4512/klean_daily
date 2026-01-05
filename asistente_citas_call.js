@@ -1,7 +1,7 @@
-﻿const CLIENTES_API = 'http://localhost:3001/api/clientes_klean_vet';
-const CITAS_API = 'http://localhost:3001/api/citas_klean_vet';
-const VETS_API = 'http://localhost:3001/api/ventas_tutores/veterinarios';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const CLIENTES_API = '/api/clientes_klean_vet';
+const CITAS_API = '/api/citas_klean_vet';
+const VETS_API = '/api/ventas_tutores/veterinarios';
+const AUTH_BASE_URL = '/api/auth';
 
 const state = {
     view: 'week',

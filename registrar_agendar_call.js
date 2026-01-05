@@ -1,6 +1,6 @@
-const API_BASE_URL = 'http://localhost:3001/api/clientes_klean_vet';
-const GEO_BASE_URL = 'http://localhost:3001/api/geografia_klean_vet';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const API_BASE_URL = '/api/clientes_klean_vet';
+const GEO_BASE_URL = '/api/geografia_klean_vet';
+const AUTH_BASE_URL = '/api/auth';
 let asesorNombre = '';
 
 async function verifyAccess() {

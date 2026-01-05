@@ -1,7 +1,7 @@
-const API_BASE_URL = 'http://localhost:3001/api/ventas_tutores';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
-const CREDITOS_VETS_API_BASE_URL = 'http://localhost:3001/api/creditos_vets';
-const RECAUDO_VETS_API_BASE_URL = 'http://localhost:3001/api/recaudo_vets';
+const API_BASE_URL = '/api/ventas_tutores';
+const AUTH_BASE_URL = '/api/auth';
+const CREDITOS_VETS_API_BASE_URL = '/api/creditos_vets';
+const RECAUDO_VETS_API_BASE_URL = '/api/recaudo_vets';
 
 const paymentOptions = ['Contra Entrega', 'Decontado', 'Credito', 'Devolucion'];
 const defaultPayment = 'Decontado';

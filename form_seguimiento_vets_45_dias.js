@@ -1,4 +1,4 @@
-const SEGUIMIENTOS_45_API = 'http://localhost:3001/api/seguimientos_vets_45';
+const SEGUIMIENTOS_45_API = '/api/seguimientos_vets_45';
 const SEGUIMIENTOS_45_PROGRESS_API = `${SEGUIMIENTOS_45_API}/progreso`;
 
 function getRequiredValue(element) {

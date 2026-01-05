@@ -1,5 +1,5 @@
-const API_BASE_URL = 'http://localhost:3001/api/preventascall';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const API_BASE_URL = '/api/preventascall';
+const AUTH_BASE_URL = '/api/auth';
 
 function formatDateTime(value) {
     if (!value) return 'N/A';

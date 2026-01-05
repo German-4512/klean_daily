@@ -1,6 +1,6 @@
 // Definimos la URL base de nuestro Backend
-const API_BASE_URL = 'http://localhost:3001/api/users';
-const VETERINARIOS_API = 'http://localhost:3001/api/ventas_tutores/veterinarios';
+const API_BASE_URL = '/api/users';
+const VETERINARIOS_API = '/api/ventas_tutores/veterinarios';
 let selectedUserId = null; // Almacena el ID del usuario seleccionado en la tabla
 let cachedVeterinarios = null;
 

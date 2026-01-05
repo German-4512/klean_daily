@@ -1,7 +1,7 @@
-const VENTAS_API = 'http://localhost:3001/api/ventas_tutores';
-const CREDITOS_VETS_API = 'http://localhost:3001/api/creditos_vets';
-const RECAUDO_VETS_API = 'http://localhost:3001/api/recaudo_vets';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const VENTAS_API = '/api/ventas_tutores';
+const CREDITOS_VETS_API = '/api/creditos_vets';
+const RECAUDO_VETS_API = '/api/recaudo_vets';
+const AUTH_BASE_URL = '/api/auth';
 
 const CBD_PRODUCTS = new Set([
   '1% 15 Ml',

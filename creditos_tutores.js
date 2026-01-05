@@ -1,6 +1,6 @@
-const API_BASE_URL = 'http://localhost:3001/api/creditos_kv';
-const CREDITOS_VETS_API_BASE_URL = 'http://localhost:3001/api/creditos_vets';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const API_BASE_URL = '/api/creditos_kv';
+const CREDITOS_VETS_API_BASE_URL = '/api/creditos_vets';
+const AUTH_BASE_URL = '/api/auth';
 
 function normalizeValue(value) {
   return String(value || '')
@@ -311,8 +311,8 @@ async function loadCreditos(token, rangeOptions = {}, estadoCredito = '') {
           if (tipoRecaudo && shouldCreateRecaudo) {
             try {
               const recaudoEndpoint = row.tipo === 'vets'
-                ? 'http://localhost:3001/api/recaudo_vets'
-                : 'http://localhost:3001/api/recaudo_call';
+                ? '/api/recaudo_vets'
+                : '/api/recaudo_call';
               const recaudoPayload = row.tipo === 'vets'
                 ? {
                   venta_confirmada_id: row.ventaConfirmadaId,

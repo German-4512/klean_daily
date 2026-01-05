@@ -3,6 +3,7 @@
 const express = require('express');
 const dotenv = require('dotenv'); // Para cargar las variables del .env
 const cors = require('cors'); // Para permitir comunicación con el Frontend
+const path = require('path');
 // IMPORTANTE: Cargamos las variables de entorno ANTES que cualquier otro módulo las necesite
 dotenv.config(); 
 
@@ -20,9 +21,15 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 
 // Middleware CORS: Permite que el Frontend acceda a nuestra API.
+const defaultOrigins = ['http://localhost:5500', 'http://127.0.0.7:5500'];
+const envOrigins = (process.env.CORS_ORIGINS || '')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+const allowedOrigins = [...new Set([...defaultOrigins, ...envOrigins])];
+
 const corsOptions = {
-    // Definición estricta: Permite solo peticiones desde el origen de desarrollo del Frontend
-    origin: ['http://localhost:5500', 'http://127.0.0.7:5500'], 
+    origin: allowedOrigins.length ? allowedOrigins : true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204
@@ -89,11 +96,14 @@ const citasKleanVetRoutes = require('./routes/citas_klean_vet');
 app.use('/api/citas_klean_vet', citasKleanVetRoutes); // Prefijo: /api/citas_klean_vet/...
 
 // ------------------------------------------------
-// 3. RUTA DE PRUEBA 
+// 3. FRONTEND ESTATICO
 // ------------------------------------------------
+const frontendDir = path.join(__dirname, '..');
+app.use(express.static(frontendDir));
 
+const frontendEntry = process.env.FRONTEND_ENTRY || 'inicio_sesion.html';
 app.get('/', (req, res) => {
-    res.status(200).send('Servidor KLEAN DAILY API operativo.');
+    res.sendFile(path.join(frontendDir, frontendEntry));
 });
 
 // ------------------------------------------------
@@ -136,6 +146,12 @@ app.get('/health', async (req, res) => {
     }
 });
 
+// ------------------------------------------------
+// 3.2 RUTA DE PRUEBA API
+// ------------------------------------------------
+app.get('/api', (req, res) => {
+    res.status(200).send('Servidor KLEAN DAILY API operativo.');
+});
 
 // ------------------------------------------------
 // 4. INICIO DEL SERVIDOR

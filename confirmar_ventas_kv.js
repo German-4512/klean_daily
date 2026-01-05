@@ -1,6 +1,6 @@
-const API_BASE_URL = 'http://localhost:3001/api/preventascall';
-const CREDITOS_API_BASE_URL = 'http://localhost:3001/api/creditos_kv';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const API_BASE_URL = '/api/preventascall';
+const CREDITOS_API_BASE_URL = '/api/creditos_kv';
+const AUTH_BASE_URL = '/api/auth';
 
 const productOptions = [
     '1% 15 Ml',

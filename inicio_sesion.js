@@ -1,6 +1,6 @@
 // Definimos la URL base de nuestro Backend de Node.js
 // Usamos el prefijo /api/auth que definimos en el server.js
-const API_BASE_URL = 'http://localhost:3001/api/auth'; 
+const API_BASE_URL = '/api/auth'; 
 
 /**
  * Función principal para manejar el envío del formulario de inicio de sesión.

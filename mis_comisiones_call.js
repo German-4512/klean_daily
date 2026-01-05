@@ -1,6 +1,6 @@
-const API_BASE_URL = 'http://localhost:3001/api/preventascall';
-const RECAUDO_API_BASE_URL = 'http://localhost:3001/api/recaudo_call';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const API_BASE_URL = '/api/preventascall';
+const RECAUDO_API_BASE_URL = '/api/recaudo_call';
+const AUTH_BASE_URL = '/api/auth';
 
 const PRODUCTS = [
   { name: '1% 15 Ml', rate: 5000 },

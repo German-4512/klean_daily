@@ -1,7 +1,7 @@
-const VENTAS_API = 'http://localhost:3001/api/ventas_tutores';
-const SEGUIMIENTOS_API = 'http://localhost:3001/api/seguimientos_vets';
-const SEGUIMIENTOS_45_API = 'http://localhost:3001/api/seguimientos_vets_45';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const VENTAS_API = '/api/ventas_tutores';
+const SEGUIMIENTOS_API = '/api/seguimientos_vets';
+const SEGUIMIENTOS_45_API = '/api/seguimientos_vets_45';
+const AUTH_BASE_URL = '/api/auth';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const REMINDER_DELAY_MS = 3 * 60 * 1000;

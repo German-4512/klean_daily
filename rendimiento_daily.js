@@ -1,7 +1,7 @@
-const PREVENTAS_API = 'http://localhost:3001/api/preventascall';
-const ADVISORS_API = 'http://localhost:3001/api/preventascall/advisors';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
-const RENDIMIENTO_DAILY_API = 'http://localhost:3001/api/rendimiento_daily';
+const PREVENTAS_API = '/api/preventascall';
+const ADVISORS_API = '/api/preventascall/advisors';
+const AUTH_BASE_URL = '/api/auth';
+const RENDIMIENTO_DAILY_API = '/api/rendimiento_daily';
 const FLUSH_DELAY_MS = 800;
 
 let authToken = null;

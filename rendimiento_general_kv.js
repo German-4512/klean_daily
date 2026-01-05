@@ -1,9 +1,9 @@
-const PREVENTAS_API = 'http://localhost:3001/api/preventascall';
-const VENTAS_API = 'http://localhost:3001/api/ventas_tutores';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
-const ADVISORS_URL = 'http://localhost:3001/api/preventascall/advisors';
-const RECAUDO_API_BASE_URL = 'http://localhost:3001/api/recaudo_call';
-const RECAUDO_VETS_API_BASE_URL = 'http://localhost:3001/api/recaudo_vets';
+const PREVENTAS_API = '/api/preventascall';
+const VENTAS_API = '/api/ventas_tutores';
+const AUTH_BASE_URL = '/api/auth';
+const ADVISORS_URL = '/api/preventascall/advisors';
+const RECAUDO_API_BASE_URL = '/api/recaudo_call';
+const RECAUDO_VETS_API_BASE_URL = '/api/recaudo_vets';
 
 const PRODUCTS = [
   { name: '1% 15 Ml', rate: 5000 },

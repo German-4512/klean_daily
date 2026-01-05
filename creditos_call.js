@@ -1,5 +1,5 @@
-const API_BASE_URL = 'http://localhost:3001/api/creditos_kv';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const API_BASE_URL = '/api/creditos_kv';
+const AUTH_BASE_URL = '/api/auth';
 
 function normalizeValue(value) {
   return String(value || '')

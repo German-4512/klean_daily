@@ -1,6 +1,6 @@
-const SEGUIMIENTOS_30_API = 'http://localhost:3001/api/seguimientos_vets';
-const SEGUIMIENTOS_45_API = 'http://localhost:3001/api/seguimientos_vets_45';
-const AUTH_BASE_URL = 'http://localhost:3001/api/auth';
+const SEGUIMIENTOS_30_API = '/api/seguimientos_vets';
+const SEGUIMIENTOS_45_API = '/api/seguimientos_vets_45';
+const AUTH_BASE_URL = '/api/auth';
 
 let seguimientos30 = [];
 let seguimientos45 = [];
