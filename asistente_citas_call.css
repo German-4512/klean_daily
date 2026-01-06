@@ -359,6 +359,97 @@ select:focus {
     padding-right: 6px;
 }
 
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 8px;
+}
+
+.schedule-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.schedule-header {
+    font-weight: 600;
+    color: var(--color-muted);
+    text-align: center;
+    padding: 6px 0;
+}
+
+.hour-label {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    background: #f7fafb;
+    border: 1px solid var(--color-line);
+}
+
+.hour-slot {
+    min-height: 78px;
+    border-radius: 12px;
+    border: 1px dashed var(--color-line);
+    padding: 8px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hour-slot.available {
+    background: #f8fcfd;
+}
+
+.hour-slot.occupied {
+    border-color: rgba(255, 122, 69, 0.3);
+    background: #fff7f1;
+}
+
+.slot-label {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.week-schedule {
+    display: grid;
+    gap: 8px;
+}
+
+.week-schedule-row {
+    display: grid;
+    grid-template-columns: 80px repeat(var(--week-columns), minmax(140px, 1fr));
+    gap: 8px;
+}
+
+.week-time-header,
+.week-time-label {
+    font-weight: 600;
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7fafb;
+    border-radius: 10px;
+    border: 1px solid var(--color-line);
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.week-day-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    text-align: center;
+    padding: 6px 0;
+}
+
 .calendar-grid.drag-over {
     outline: 2px dashed rgba(0, 203, 209, 0.35);
     outline-offset: 4px;
